@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Use port 80 to get keys - https://superuser.com/questions/64922/how-to-work-around-blocked-outbound-hkp-port-for-apt-keys#comment399741_222083
 # Following 'How do I add or remove Dropbox from my Linux repository?' - https://www.dropbox.com/en/help/246
 RUN echo 'deb http://linux.dropbox.com/debian jessie main' > /etc/apt/sources.list.d/dropbox.list \
-	&& apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E \
+	&& apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E \
 	&& apt-get -y update \
 	# Note 'ca-certificates' dependency is required for 'dropbox start -i' to succeed
 	&& apt-get -y install ca-certificates curl python-gpgme dropbox \
