@@ -8,7 +8,7 @@ RUN echo 'deb http://linux.dropbox.com/debian jessie main' > /etc/apt/sources.li
 	&& apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E \
 	&& apt-get -y update \
 	# Note 'ca-certificates' dependency is required for 'dropbox start -i' to succeed
-	&& apt-get -y install ca-certificates curl python-gpgme dropbox \
+	&& apt-get -y install ca-certificates curl python3-gpg dropbox \
 	# Perform image clean up.
 	&& apt-get -y autoclean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
